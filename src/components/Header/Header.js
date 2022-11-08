@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/res-logo.png";
 
 const Header = () => {
@@ -19,10 +19,13 @@ const Header = () => {
       </div>
       <ul className="hidden  md:flex">
         {menuItems.map((item) => (
-          <li className="cursor-pointer">
-            <Link to={item} className="px-5 hover:text-red-600 h">
+          <li className="cursor-pointer px-5 hover:text-red-600 ">
+            <NavLink
+              to={item}
+              className={({ isActive }) => (isActive ? "text-red-600" : "")} 
+            >
               {item}
-            </Link>{" "}
+            </NavLink>{" "}
           </li>
         ))}
       </ul>
