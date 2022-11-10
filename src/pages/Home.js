@@ -5,6 +5,7 @@ import pizza from "../assets/images/category-02.png";
 import asianfood from "../assets/images/category-03.png";
 import rowmeat from "../assets/images/category-04.png";
 import hero from "../assets/images/hero.png";
+import location from "../assets/images/location.png";
 import service1 from "../assets/images/service-01.png";
 import service2 from "../assets/images/service-02.png";
 import service3 from "../assets/images/service-03.png";
@@ -112,7 +113,47 @@ const Home = () => {
             </p>
           </div>
         </div>
-        
+        {/* section four */}
+        <div className="grid grid-cols-1 md:grid-cols-2 my-20">
+          <div className="">
+            <img src={location} className="" />
+          </div>
+          <div>
+            <h3 className="text-4xl">
+              Why <span className="text-red-600 ">Tasty Treat?</span>{" "}
+            </h3>
+            <p className="text-base my-6 font-['Istok_Web'] ">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+              minus. Tempora reprehenderit a corporis velit, laboriosam vitae
+              ullam, repellat illo sequi odio esse iste fugiat dolor, optio
+              incidunt eligendi deleniti!
+            </p>
+            <div className="flex flex-col gap-y-10 font-['Istok_Web']">
+              <div>
+                <p className="font-bold">Fresh and tasty foods</p>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Quia, voluptatibus.
+                </p>
+              </div>
+              <div>
+                <p className="font-bold">Quality support</p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
+                  earum.
+                </p>
+              </div>
+
+              <div>
+                <p className="font-bold">Order from any location</p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
+                  earum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
