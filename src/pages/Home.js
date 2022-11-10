@@ -1,6 +1,11 @@
 import React from "react";
 import { AiFillCar, AiOutlineSafety } from "react-icons/ai";
+import fastfood from "../assets/images/category-01.png";
+import pizza from "../assets/images/category-02.png";
+import asianfood from "../assets/images/category-03.png";
+import rowmeat from "../assets/images/category-04.png";
 import hero from "../assets/images/hero.png";
+import Category from "../components/FoodsCategory/Category";
 
 const Home = () => {
   return (
@@ -16,7 +21,7 @@ const Home = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui magni
             delectus tenetur autem, sint veritatis!
           </p>
-          <div className="flex gap-5 mb-6">
+          <div className="flex gap-12 mb-6">
             <button className="bg-red-600 text-white py-2 px-3 rounded hover:bg-slate-600">
               Order now
             </button>
@@ -25,7 +30,7 @@ const Home = () => {
             </button>
           </div>
 
-          <div className="flex gap-5 font-['Istok_Web'] font-semibold">
+          <div className="flex gap-5 font-['Istok_Web'] font-semibold md:mt-10">
             <div className="flex items-center gap-3">
               <div className=" p-2 rounded-full bg-red-600">
                 <AiFillCar className="text-white" />
@@ -46,6 +51,12 @@ const Home = () => {
         <div className="">
           <img src={hero} alt="" />
         </div>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <Category  name="Fastfood" image={fastfood} />
+        <Category name="Pizza" image={pizza} />
+        <Category name="Asian Food" image={asianfood} />
+        <Category name="Row Meats" image={rowmeat} />
       </div>
     </div>
   );
