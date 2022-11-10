@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web&family=RocknRoll+One&display=swap");
 body {
   margin: 0;
   font-family: "RocknRoll One", sans-serif;
