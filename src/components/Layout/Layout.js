@@ -5,10 +5,12 @@ import Header from "../Header/Header";
 
 const Layout = () => {
   return (
-    <div className=" max-w-7xl mx-auto   bg-white">
-      <Header />
-      <div>
-        <Routers />
+    <div>
+      <div className=" max-w-7xl mx-auto   bg-white">
+        <Header />
+        <div>
+          <Routers />
+        </div>
       </div>
       <Footer />
     </div>
