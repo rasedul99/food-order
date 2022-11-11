@@ -9,6 +9,7 @@ import location from "../assets/images/location.png";
 import service1 from "../assets/images/service-01.png";
 import service2 from "../assets/images/service-02.png";
 import service3 from "../assets/images/service-03.png";
+import FoodCard from "../components/FoodsCard/FoodCard";
 import Category from "../components/FoodsCategory/Category";
 
 const Home = () => {
@@ -114,7 +115,7 @@ const Home = () => {
           </div>
         </div>
         {/* section four */}
-        <div className="grid grid-cols-1 md:grid-cols-2 my-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 my-8">
           <div className="">
             <img src={location} className="" />
           </div>
@@ -153,6 +154,17 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* demo */}
+        <div>
+          <h3 className="text-4xl text-center mb-10">Hot Pizza</h3>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-3  mb-20">
+          <FoodCard />
+          <FoodCard />
+          <FoodCard />
+          <FoodCard />
         </div>
       </div>
     </div>
