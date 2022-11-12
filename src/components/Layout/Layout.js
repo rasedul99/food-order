@@ -5,8 +5,8 @@ import Header from "../Header/Header";
 
 const Layout = () => {
   return (
-    <div>
-      <div className=" max-w-7xl mx-auto   bg-white">
+    <div className="bg-white text-black">
+      <div className=" max-w-7xl  mx-auto ">
         <Header />
         <div>
           <Routers />

@@ -22,7 +22,7 @@ const Header = () => {
           <li className="cursor-pointer px-5 hover:text-red-600 ">
             <NavLink
               to={item}
-              className={({ isActive }) => (isActive ? "text-red-600" : "")} 
+              className={({ isActive }) => (isActive ? "text-red-600" : "")}
             >
               {item}
             </NavLink>{" "}
@@ -52,7 +52,11 @@ const Header = () => {
         </div>
       ) : (
         <div className="flex items-center gap-x-3 cursor-pointer">
-          <AiOutlineShoppingCart size={25} /> <BiUserCircle size={25} />
+          <AiOutlineShoppingCart size={25} />
+          <Link to="/login">
+            <BiUserCircle size={25} />
+          </Link>
+
           <div onClick={handleHambarger} className="md:hidden">
             <GiHamburgerMenu />
           </div>

@@ -10,7 +10,10 @@ const Foods = () => {
       </div>
       <div className="flex justify-between my-7">
         <div className="flex justify-between w-2/4 border border-red-600  items-center px-3">
-          <input placeholder="I am looking for...." className="outline-none " />
+          <input
+            placeholder="I am looking for...."
+            className="outline-none bg-white"
+          />
           <span>
             <CiSearch size="20" />
           </span>
@@ -18,7 +21,7 @@ const Foods = () => {
         <div className="flex justify-between w-1/4 border border-red-600  items-center">
           <input
             placeholder="I am looking for...."
-            className="py-1 px-2  outline-none "
+            className="py-1 px-2  outline-none bg-white "
           />
           <span>
             <BsArrowDownShort size="24" />
