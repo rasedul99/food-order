@@ -1,13 +1,18 @@
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/res-logo.png";
 
+import auth from "../../firebase.init";
+
 const Header = () => {
   const menuItems = ["Home", "Foods", "Cart", "Contact"];
   const [show, setShow] = useState(false);
+  const [user, loading, error] = useAuthState(auth);
+  console.log(user?.photoURL);
   const handleHambarger = () => {
     setShow(!show);
   };
@@ -53,9 +58,15 @@ const Header = () => {
       ) : (
         <div className="flex items-center gap-x-3 cursor-pointer">
           <AiOutlineShoppingCart size={25} />
-          <Link to="/login">
-            <BiUserCircle size={25} />
-          </Link>
+          {user?.photoURL ? (
+            <div className="w-8">
+              <img src={user.photoURL} className="rounded-full" />
+            </div>
+          ) : (
+            <Link to="/login">
+              <BiUserCircle size={25} />
+            </Link>
+          )}
 
           <div onClick={handleHambarger} className="md:hidden">
             <GiHamburgerMenu />
