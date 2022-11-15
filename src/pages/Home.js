@@ -1,5 +1,6 @@
 import React from "react";
 import { AiFillCar, AiOutlineSafety } from "react-icons/ai";
+import products from "../assets/fake-data/products";
 import fastfood from "../assets/images/category-01.png";
 import pizza from "../assets/images/category-02.png";
 import asianfood from "../assets/images/category-03.png";
@@ -161,10 +162,9 @@ const Home = () => {
           <h3 className="text-4xl text-center mb-10">Hot Pizza</h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-3  mb-20">
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
+          {products.slice(0, 4).map((product) => (
+            <FoodCard product={product} />
+          ))}
         </div>
       </div>
     </div>

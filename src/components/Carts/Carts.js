@@ -1,11 +1,21 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import pizza from "../../assets/images/pizza.png";
+import { hideCartToggle } from "../../store/actions/cartActions";
 
 const Carts = () => {
+  const dispatch = useDispatch();
   return (
     <div className="fixed top-0 left-0 w-full bg-black bg-opacity-50 h-full  z-40">
       <div className="absolute top-0 right-0 w-96 h-full bg-white  z-50">
-        <div className="mx-2 mb-5">X</div>
+        <button
+          onClick={() => {
+            dispatch(hideCartToggle());
+          }}
+          className="mx-2 mb-5"
+        >
+          X
+        </button>
         <div className="flex justify-between mx-2">
           <div className="flex gap-3 ">
             <img src={pizza} alt="img" className="w-10 h-10" />

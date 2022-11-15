@@ -1,6 +1,7 @@
 import React from "react";
 import { BsArrowDownShort } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
+import products from "../assets/fake-data/products";
 import FoodCard from "../components/FoodsCard/FoodCard";
 const Foods = () => {
   return (
@@ -29,14 +30,10 @@ const Foods = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-3 ">
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
+        {products.map((product) => (
+          <FoodCard product={product} />
+        ))}
+        
       </div>
 
       <div className="flex gap-x-2 items-center justify-center my-4">

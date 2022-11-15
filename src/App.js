@@ -1,9 +1,15 @@
+import { Provider, useSelector } from "react-redux";
 import Layout from "./components/Layout/Layout";
+import store from "./store/store";
+
 
 function App() {
+ 
   return (
     <div className="App relative">
-      <Layout />
+      <Provider store={store}>
+        <Layout />
+      </Provider>
     </div>
   );
 }

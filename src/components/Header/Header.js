@@ -3,19 +3,24 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/res-logo.png";
 
 import auth from "../../firebase.init";
+import { showCartToggle } from "../../store/actions/cartActions";
 
 const Header = () => {
   const menuItems = ["Home", "Foods", "Cart", "Contact"];
   const [show, setShow] = useState(false);
   const [user, loading, error] = useAuthState(auth);
+  const dispatch = useDispatch();
+
   console.log(user?.photoURL);
   const handleHambarger = () => {
     setShow(!show);
   };
+
   return (
     <nav className="flex justify-between  mx-2 md:h-20 items-center ">
       <div className="flex flex-col  items-center ">
@@ -57,7 +62,15 @@ const Header = () => {
         </div>
       ) : (
         <div className="flex items-center gap-x-3 cursor-pointer">
-          <AiOutlineShoppingCart size={25} />
+          <button
+            onClick={() => {
+              dispatch(showCartToggle());
+            }}
+          >
+            {" "}
+            <AiOutlineShoppingCart size={25} />
+          </button>
+
           {user?.photoURL ? (
             <div className="w-8">
               <img src={user.photoURL} className="rounded-full" />
