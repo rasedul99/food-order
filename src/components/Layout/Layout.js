@@ -6,13 +6,13 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
 const Layout = () => {
-  const cart = useSelector((state) => state.cart);
-  console.log(cart);
+  const toggle = useSelector((state) => state.toggle.display_cart);
+  console.log(toggle);
   return (
     <div className="bg-white text-black">
       <div className=" max-w-7xl  mx-auto ">
         <Header />
-        {cart && <Carts />}
+        {toggle && <Carts />}
 
         <div>
           <Routers />
