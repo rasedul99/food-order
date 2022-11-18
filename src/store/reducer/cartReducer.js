@@ -1,7 +1,6 @@
 import { ADD_TO_CART, hide_cart, show_cart } from "../types/actionTypes";
 
-const initialState = false;
-export const toogleReducer = (state = initialState, action) => {
+export const toogleReducer = (state = false, action) => {
   switch (action.type) {
     case show_cart:
       return {

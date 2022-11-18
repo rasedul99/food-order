@@ -5,6 +5,7 @@ import { hideCartToggle } from "../../store/actions/cartActions";
 const Carts = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cartItems);
+  localStorage.setItem("cart", JSON.stringify(cart));
   return (
     <div className="fixed top-0 left-0 w-full bg-black bg-opacity-50 h-full  z-40">
       <div className="absolute top-0 right-0 w-96 h-full bg-white  z-50">

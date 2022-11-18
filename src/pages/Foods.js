@@ -1,9 +1,11 @@
-import React from "react";
-import { BsArrowDownShort } from "react-icons/bs";
+import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import products from "../assets/fake-data/products";
 import FoodCard from "../components/FoodsCard/FoodCard";
 const Foods = () => {
+  const [searchProduct, setSearchProduct] = useState("");
+  const [productData, setSearchProductData] = useState(products);
+
   return (
     <div>
       <div>
@@ -14,26 +16,31 @@ const Foods = () => {
           <input
             placeholder="I am looking for...."
             className="outline-none bg-white"
+            value={searchProduct}
+            onChange={(e) => setSearchProduct(e.target.value)}
           />
           <span>
             <CiSearch size="20" />
           </span>
         </div>
         <div className="flex justify-between w-1/4 border border-red-600  items-center">
-          <input
-            placeholder="I am looking for...."
-            className="py-1 px-2  outline-none bg-white "
-          />
-          <span>
-            <BsArrowDownShort size="24" />
-          </span>
+          <select className="bg-white border-none focus:outline-none w-full">
+            <option>Default</option>
+            <option value="male">Alphabetically,A-Z</option>
+            <option value="female">Alphabetically,Z-A</option>
+            <option value="other">High Price</option>
+            <option value="other">Low Price</option>
+          </select>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-3 ">
-        {products.map((product) => (
-          <FoodCard product={product} />
-        ))}
-        
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+        {productData
+          .filter((item) => {
+            return item.title.toLowerCase().includes(searchProduct);
+          })
+          .map((product) => (
+            <FoodCard product={product} />
+          ))}
       </div>
 
       <div className="flex gap-x-2 items-center justify-center my-4">

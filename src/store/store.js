@@ -5,6 +5,12 @@ const rootReducer = combineReducers({
   toggle: toogleReducer,
   cart: cartReducer,
 });
-const store = createStore(rootReducer, composeWithDevTools());
+
+const initialState = {
+  toggle: false,
+  cart: { cartItems: [] },
+};
+
+const store = createStore(rootReducer, initialState, composeWithDevTools());
 
 export default store;
