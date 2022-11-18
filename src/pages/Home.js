@@ -15,7 +15,7 @@ import Category from "../components/FoodsCategory/Category";
 
 const Home = () => {
   return (
-    <div>
+    <div className=" max-w-7xl  mx-auto ">
       {/* hero section */}
       <div className=" grid grid-cols-1 md:grid-cols-2  justify-items-center items-center">
         <div className="md:-mt-10 mt-10  flex flex-col justify-center items-center md:inline">

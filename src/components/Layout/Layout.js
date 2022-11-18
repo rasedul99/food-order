@@ -10,7 +10,7 @@ const Layout = () => {
   console.log(toggle);
   return (
     <div className="bg-white text-black">
-      <div className=" max-w-7xl  mx-auto ">
+      <div>
         <Header />
         {toggle && <Carts />}
 
