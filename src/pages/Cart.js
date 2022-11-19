@@ -1,13 +1,22 @@
 import React from "react";
 import { AiOutlineDelete } from "react-icons/ai";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Banner from "../components/Banner/Banner";
+import { deleteToCart } from "../store/actions/cartActions";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const subTotal = cartItems.reduce((total, item) => {
+    return total + parseFloat(item.price);
+  }, 0);
+  const dispatch = useDispatch();
   return (
     <div>
-      <Banner title="Your Cart" />
+      <div>
+        {" "}
+        <Banner title="Your Cart" />
+      </div>
+
       <div className="max-w-7xl mx-auto">
         <div>
           <table class="table-auto w-full my-10">
@@ -24,7 +33,7 @@ const Cart = () => {
               return (
                 <>
                   <tbody>
-                    <tr className="border">
+                    <tr className="border" key={item.id}>
                       <td className=" flex justify-center">
                         <img src={item.image01} className=" w-24 h-24 " />
                       </td>
@@ -38,7 +47,11 @@ const Cart = () => {
                         <p className="text-center">{item.title}</p>
                       </td>
                       <td>
-                        <button>
+                        <button
+                          onClick={(e) => {
+                            dispatch(deleteToCart(item.id));
+                          }}
+                        >
                           {" "}
                           <AiOutlineDelete size={24} />
                         </button>
@@ -48,35 +61,12 @@ const Cart = () => {
                 </>
               );
             })}
-            {/* <tbody>
-            <tr className="border">
-              <td>The</td>
-              <td>Malcolm</td>
-              <td>1961</td>
-              <td>19</td>
-              <td>1961</td>
-            </tr>
-            <tr className="border">
-              <td>Witchy Woman</td>
-              <td>The Eagles</td>
-              <td>1972</td>
-              <td>1972</td>
-              <td>1972</td>
-            </tr>
-            <tr className="border">
-              <td>Shining Star</td>
-              <td>Earth, Wind, and Fire</td>
-              <td>1975</td>
-              <td>1975</td>
-              <td>1975</td>
-            </tr>
-          </tbody> */}
           </table>
         </div>
 
         <div>
           <p>
-            Subtotal : $<span className="text-red-600">295</span>{" "}
+            Subtotal : $<span className="text-red-600">{subTotal}</span>{" "}
           </p>
           <p>Taxes and shipping will calculate at checkout</p>
           <div className="flex gap-x-5 my-5">

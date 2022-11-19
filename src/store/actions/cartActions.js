@@ -1,4 +1,9 @@
-import { ADD_TO_CART, hide_cart, show_cart } from "../types/actionTypes";
+import {
+  ADD_TO_CART,
+  DELETE_TO_CART,
+  hide_cart,
+  show_cart,
+} from "../types/actionTypes";
 export const showCartToggle = () => {
   return {
     type: show_cart,
@@ -16,5 +21,11 @@ export const addToCart = (product) => {
   return {
     type: ADD_TO_CART,
     payload: product,
+  };
+};
+export const deleteToCart = (id) => {
+  return {
+    type: DELETE_TO_CART,
+    payload: id,
   };
 };

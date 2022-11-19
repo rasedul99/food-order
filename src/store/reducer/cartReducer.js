@@ -1,4 +1,9 @@
-import { ADD_TO_CART, hide_cart, show_cart } from "../types/actionTypes";
+import {
+  ADD_TO_CART,
+  DELETE_TO_CART,
+  hide_cart,
+  show_cart,
+} from "../types/actionTypes";
 
 export const toogleReducer = (state = false, action) => {
   switch (action.type) {
@@ -31,6 +36,19 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
           cartItems: [...state.cartItems, action.payload],
         };
       }
+    case DELETE_TO_CART:
+      const deleteProduct = action.payload;
+      console.log(deleteProduct);
+      console.log(deleteProduct);
+      const restProduct = state.cartItems.filter(
+        (item) => item.id !== deleteProduct
+      );
+      console.log(restProduct);
+
+      return {
+        ...state,
+        cartItems: restProduct,
+      };
 
     default:
       return state;

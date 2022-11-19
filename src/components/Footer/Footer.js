@@ -11,7 +11,7 @@ import logo from "../../assets/images/res-logo.png";
 
 const Footer = () => {
   return (
-    <div className="bg-red-200 p-10 ">
+    <div className="bg-red-200 p-10">
       <div className="grid grid-cols-1 md:grid-cols-4 ">
         <div>
           <img src={logo} alt="logo" className="w-10" />

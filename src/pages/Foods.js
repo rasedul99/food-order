@@ -9,7 +9,7 @@ const Foods = () => {
 
   return (
     <div>
-      <div>
+      <div >
         <Banner title="All Foods" />
       </div>
       <div className="max-w-7xl mx-auto">

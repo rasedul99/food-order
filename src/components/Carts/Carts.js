@@ -5,6 +5,9 @@ import { hideCartToggle } from "../../store/actions/cartActions";
 const Carts = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cartItems);
+  const subTotal = cart.reduce((total, item) => {
+    return total + parseFloat(item.price);
+  }, 0);
   localStorage.setItem("cart", JSON.stringify(cart));
   return (
     <div className="fixed top-0 left-0 w-full bg-black bg-opacity-50 h-full  z-40">
@@ -55,7 +58,7 @@ const Carts = () => {
 
         <div className="absolute bottom-0 w-full">
           <div className="bg-red-600  p-5 flex items-center  justify-between">
-            <p className="text-white">Subtotal : $0</p>
+            <p className="text-white">Subtotal : ${subTotal}</p>
             <button className="bg-white p-2 rounded">Checkout</button>
           </div>
         </div>
