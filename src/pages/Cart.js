@@ -7,7 +7,7 @@ import { deleteToCart } from "../store/actions/cartActions";
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const subTotal = cartItems.reduce((total, item) => {
-    return total + parseFloat(item.price);
+    return total + parseFloat(item.price * item.qty);
   }, 0);
   const dispatch = useDispatch();
   return (

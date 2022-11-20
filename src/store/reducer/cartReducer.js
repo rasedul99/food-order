@@ -1,7 +1,9 @@
 import {
+  ADD_QTY,
   ADD_TO_CART,
   DELETE_TO_CART,
   hide_cart,
+  REDUCE_QTY,
   show_cart,
 } from "../types/actionTypes";
 
@@ -48,6 +50,24 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
       return {
         ...state,
         cartItems: restProduct,
+      };
+    case ADD_QTY:
+      return {
+        ...state,
+        cartItems: state.cartItems.map((item) =>
+          item.id === action.payload
+            ? { ...item, qty: item.qty + 1 }
+            : { ...item }
+        ),
+      };
+    case REDUCE_QTY:
+      return {
+        ...state,
+        cartItems: state.cartItems.map((item) =>
+          item.id === action.payload
+            ? { ...item, qty: item.qty - 1 }
+            : { ...item }
+        ),
       };
 
     default:

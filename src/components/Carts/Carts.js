@@ -1,12 +1,16 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { hideCartToggle } from "../../store/actions/cartActions";
+import {
+  addQty,
+  hideCartToggle,
+  reduceQty,
+} from "../../store/actions/cartActions";
 
 const Carts = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cartItems);
   const subTotal = cart.reduce((total, item) => {
-    return total + parseFloat(item.price);
+    return total + parseFloat(item.price * item.qty);
   }, 0);
   localStorage.setItem("cart", JSON.stringify(cart));
   return (
@@ -36,14 +40,26 @@ const Carts = () => {
                       <p>{product.title}</p>
                       <div className="flex justify-between">
                         {" "}
-                        <p>1x</p>
+                        <p>{product.qty}x</p>
                         <p>${product.price}</p>
                       </div>
 
                       <div className="flex justify-between  bg-pink-200 p-2 rounded ">
-                        <p>+</p>
+                        <button
+                          onClick={() => {
+                            dispatch(addQty(product.id));
+                          }}
+                        >
+                          +
+                        </button>
                         <p>1</p>
-                        <p>-</p>
+                        <button
+                          onClick={() => {
+                            dispatch(reduceQty(product.id));
+                          }}
+                        >
+                          -
+                        </button>
                       </div>
                     </div>
                   </div>
