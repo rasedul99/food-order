@@ -1,7 +1,10 @@
 import React from "react";
+import { GrFormClose } from "react-icons/gr";
+import { MdOutlineClose } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addQty,
+  deleteToCart,
   hideCartToggle,
   reduceQty,
 } from "../../store/actions/cartActions";
@@ -14,22 +17,25 @@ const Carts = () => {
   }, 0);
   localStorage.setItem("cart", JSON.stringify(cart));
   return (
-    <div className="fixed top-0 left-0 w-full bg-black bg-opacity-50 h-full  z-40">
-      <div className="absolute top-0 right-0 w-96 h-full bg-white  z-50">
-        <button
-          onClick={() => {
-            dispatch(hideCartToggle());
-          }}
-          className="mx-2 mb-5"
-        >
-          X
-        </button>
+    <div className="fixed top-0 left-0  w-full bg-black bg-opacity-50 h-full  z-40  ">
+      <div className="absolute top-0 right-0 h-full w-96  bg-white  z-50 ">
+        <div className="bg-red-800 fixed w-full  h-12">
+          <button
+            onClick={() => {
+              dispatch(hideCartToggle());
+            }}
+            className="m-2 p-1 bg-slate-900 rounded-full"
+          >
+            <MdOutlineClose size={24} className="text-white "/>
+          </button>
+        </div>
+
         {cart.length > 0 ? (
-          <>
+          <div className="h-screen w-screen overflow-y-scroll fixed top-12">
             {cart.map((product) => {
               return (
-                <div className="flex justify-between m-2">
-                  <div className="flex gap-3 ">
+                <div className="flex justify-between m-2  ">
+                  <div className="flex gap-3">
                     <img
                       src={product.image01}
                       alt="img"
@@ -63,16 +69,23 @@ const Carts = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="self-center">x</div>
+                  <button
+                    className="self-center"
+                    onClick={(e) => {
+                      dispatch(deleteToCart(product.id));
+                    }}
+                  >
+                    <GrFormClose size={24} />
+                  </button>
                 </div>
               );
             })}
-          </>
+          </div>
         ) : (
           <div className="text-center text-red-600"> No Items in card</div>
         )}
 
-        <div className="absolute bottom-0 w-full">
+        <div className="fixed bottom-0 w-full">
           <div className="bg-red-600  p-5 flex items-center  justify-between">
             <p className="text-white">Subtotal : ${subTotal}</p>
             <button className="bg-white p-2 rounded">Checkout</button>

@@ -11,7 +11,7 @@ import logo from "../../assets/images/res-logo.png";
 
 const Footer = () => {
   return (
-    <div className="bg-red-200 p-10">
+    <div className="bg-red-200 p-10 ">
       <div className="grid grid-cols-1 md:grid-cols-4 ">
         <div>
           <img src={logo} alt="logo" className="w-10" />
@@ -54,7 +54,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="border-0 outline-0 bg-transparent font-['Istok_Web'] text-black"
+              className="border-0 outline-0 bg-transparent font-['Istok_Web']"
             />{" "}
             <button className="bg-red-600 px-7 py-2 rounded">
               <RiSendPlaneLine className="text-white" />

@@ -44,7 +44,7 @@ const Cart = () => {
                         <p className="text-center">${item.price}</p>
                       </td>
                       <td>
-                        <p className="text-center">{item.title}</p>
+                        <p className="text-center">{item.qty}</p>
                       </td>
                       <td>
                         <button

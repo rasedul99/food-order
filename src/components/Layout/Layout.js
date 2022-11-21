@@ -12,7 +12,7 @@ const Layout = () => {
     <div className="bg-white text-black">
       <div>
         <Header />
-        {toggle && <Carts />}
+        <div> {toggle && <Carts />}</div>
 
         <div>
           <Routers />
