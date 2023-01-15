@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Banner from "../components/Banner/Banner";
 import { deleteToCart } from "../store/actions/cartActions";
 
@@ -70,9 +71,12 @@ const Cart = () => {
           </p>
           <p>Taxes and shipping will calculate at checkout</p>
           <div className="flex gap-x-5 my-5">
-            <button className="bg-red-600 text-white py-2 px-3 rounded">
+            <Link
+              to="/foods"
+              className="bg-red-600 text-white py-2 px-3 rounded"
+            >
               Continue Shopping
-            </button>
+            </Link>
             <button className="bg-red-600 text-white py-2 px-3 rounded">
               Proceed to checkout
             </button>

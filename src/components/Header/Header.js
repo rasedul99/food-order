@@ -26,10 +26,10 @@ const Header = () => {
     <nav className="fixed top-0 bg-white w-full h-20 ">
       <div className=" max-w-7xl  mx-auto  ">
         <div className="flex justify-between  mx-2 h-20 items-center ">
-          <div className="flex flex-col  items-center ">
+          <Link to="home" className="flex flex-col  items-center ">
             <img src={logo} alt="logo" className="w-10" />
-            <p>Tasty Treat</p>
-          </div>
+            <p>Hello Foods</p>
+          </Link>
           <ul className="hidden  md:flex">
             {menuItems.map((item) => (
               <li className="cursor-pointer px-5 hover:text-red-600 ">

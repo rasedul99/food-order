@@ -4,7 +4,7 @@ import store from "./store/store";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-white">
       <Provider store={store}>
         <Layout />
       </Provider>

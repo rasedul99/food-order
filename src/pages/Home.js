@@ -1,5 +1,6 @@
 import React from "react";
 import { AiFillCar, AiOutlineSafety } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import products from "../assets/fake-data/products";
 import fastfood from "../assets/images/category-01.png";
 import pizza from "../assets/images/category-02.png";
@@ -29,12 +30,18 @@ const Home = () => {
             delectus tenetur autem, sint veritatis!
           </p>
           <div className="flex gap-12 mb-6">
-            <button className="bg-red-600 text-white py-2 px-3 rounded hover:bg-slate-600">
+            <Link
+              to="/Cart"
+              className="bg-red-600 text-white py-2 px-3 rounded hover:bg-slate-600"
+            >
               Order now
-            </button>
-            <button className="text-red-600 py-2 px-3 border border-red-600 rounded">
+            </Link>
+            <Link
+              to="/Foods"
+              className="text-red-600 py-2 px-3 border border-red-600 rounded"
+            >
               See all foods
-            </button>
+            </Link>
           </div>
 
           <div className="flex gap-5 font-['Istok_Web'] font-semibold md:mt-10">

@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 ">
         <div>
           <img src={logo} alt="logo" className="w-10" />
-          <p>Tasty Treat</p>
+          <p>Hello Foods</p>
           <p className="font-['Istok_Web'] my-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
             pariatur accusamus
@@ -38,10 +38,10 @@ const Footer = () => {
           <h3>Contact</h3>
           <div className="font-['Istok_Web'] my-4">
             <div className="">
-              <p>Location: ZindaBazar, Sylhet-3100, Bangladesh</p>
+              <p>Location: Danmonddi 32, Dhaka 1207, Bangladesh</p>
             </div>
             <div className="my-4">
-              <p className="font-bold">Phone: 01712345678</p>
+              <p className="font-bold">Phone: 01700000000</p>
               <p className="font-bold">Email: example@gmail.com</p>
             </div>
           </div>
@@ -65,7 +65,7 @@ const Footer = () => {
       <div className="flex justify-between my-5">
         <div>
           <p className="text-xs text-red-600 ">
-            Copyright - 2022, website made by Muhibur Rahman. All Rights
+            Copyright - 2023, website made by Rasedul Islam. All Rights
             Reserved.
           </p>
         </div>

@@ -19,19 +19,19 @@ const Carts = () => {
   return (
     <div className="fixed top-0 left-0  w-full bg-black bg-opacity-50 h-full  z-40  ">
       <div className="absolute top-0 right-0 h-full w-96  bg-white  z-50 ">
-        <div className="bg-red-800 fixed w-full  h-12">
+        <div className=" fixed w-full  h-12">
           <button
             onClick={() => {
               dispatch(hideCartToggle());
             }}
             className="m-2 p-1 bg-slate-900 rounded-full"
           >
-            <MdOutlineClose size={24} className="text-white "/>
+            <MdOutlineClose size={24} className="text-white " />
           </button>
         </div>
 
         {cart.length > 0 ? (
-          <div className="h-screen w-screen overflow-y-scroll fixed top-12">
+          <div className="h-screen w-screen overflow-y-scroll my-12">
             {cart.map((product) => {
               return (
                 <div className="flex justify-between m-2  ">
