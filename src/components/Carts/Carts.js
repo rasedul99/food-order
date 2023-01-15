@@ -17,7 +17,7 @@ const Carts = () => {
   }, 0);
   localStorage.setItem("cart", JSON.stringify(cart));
   return (
-    <div className="fixed top-0 left-0  w-full bg-black bg-opacity-50 h-full  z-40  ">
+    <div className="fixed top-0 left-0  w-full bg-black bg-opacity-50 h-screen  z-40  ">
       <div className="absolute top-0 right-0 h-full w-96  bg-white  z-50 ">
         <div className=" fixed w-full  h-12">
           <button
@@ -31,7 +31,7 @@ const Carts = () => {
         </div>
 
         {cart.length > 0 ? (
-          <div className="h-screen w-screen overflow-y-scroll my-12">
+          <div className=" w-screen overflow-y-scroll my-12">
             {cart.map((product) => {
               return (
                 <div className="flex justify-between m-2  ">
@@ -85,11 +85,13 @@ const Carts = () => {
           <div className="text-center text-red-600"> No Items in card</div>
         )}
 
-        <div className="fixed bottom-0 w-full">
-          <div className="bg-red-600  p-5 flex items-center  justify-between">
-            <p className="text-white">Subtotal : ${subTotal}</p>
-            <button className="bg-white p-2 rounded">Checkout</button>
-          </div>
+        <div className="p-5 flex flex-col gap-3 ">
+          <p className="bg-red-600 p-4 text-white text-center rounded">
+            Subtotal : ${subTotal}
+          </p>
+          <button className="bg-red-600 text-white p-4 rounded">
+            Checkout
+          </button>
         </div>
       </div>
     </div>
