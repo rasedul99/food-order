@@ -17,8 +17,8 @@ const Carts = () => {
   }, 0);
   localStorage.setItem("cart", JSON.stringify(cart));
   return (
-    <div className="fixed top-0 left-0  w-full bg-black bg-opacity-50 h-screen  z-40  ">
-      <div className="absolute top-0 right-0 h-full w-96  bg-white  z-50 ">
+    <div className="fixed top-0 left-0  h-full w-full bg-black bg-opacity-50   z-40  ">
+      <div className="absolute top-0 right-0 h-full overflow-auto w-96  bg-white  z-50 ">
         <div className=" fixed w-full  h-12">
           <button
             onClick={() => {
