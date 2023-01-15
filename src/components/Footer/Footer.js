@@ -64,12 +64,12 @@ const Footer = () => {
       </div>
       <div className="flex justify-between my-5">
         <div>
-          <p className="text-xs text-red-600 ">
+          <p className="text-xs text-red-600">
             Copyright - 2023, website made by Rasedul Islam. All Rights
             Reserved.
           </p>
         </div>
-        <div className="flex gap-x-5">
+        <div className="flex flex-col md:flex-row gap-5">
           <p>Follow:</p>
           <div className=" p-2 rounded-full bg-red-600">
             <AiOutlineFacebook className="text-white" />
